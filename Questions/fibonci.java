@@ -23,7 +23,7 @@ public class fibonci {
                 System.out.println(first);
                 System.out.println(second);
                 int count = 2; // first 2 will be always same so count will be starting from 3
-                while (count<n){
+                while (count<=n){
                     // fibonci number is the addition of the previous 2 numbers
                     current_result = first + second;
                     first = second;
