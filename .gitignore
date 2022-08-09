@@ -1,5 +1,7 @@
 # Project exclude paths
 out
+bin
+.class
 .idea
 *.iml
 .vscode
