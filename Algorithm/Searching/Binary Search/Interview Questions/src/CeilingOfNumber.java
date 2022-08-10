@@ -19,6 +19,8 @@
  * After start becomes greater than end start becomes greater than target as well. SO at the end Start value will be our ans. Or after the Start becomes greater than end it becomes the ceil of the target element(smallest greater than target)
  * 
  * So instead of returning -1 at the end of the while loop we will return the start value.
+ * 
+ * Another check is that what if the target element is larger than the largest element in the array. Then no ceil.Then return -1
  */
 public class CeilingOfNumber {
     public static void main(String[] args) {
@@ -29,6 +31,10 @@ public class CeilingOfNumber {
     }
 
     static int ceil(int[] arr,int target){
+        if(target>arr[arr.length-1]){
+            return -1;
+        }
+
         int start = 0;
         int end = arr.length - 1;
 
