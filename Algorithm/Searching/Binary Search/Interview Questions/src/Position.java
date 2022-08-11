@@ -1,20 +1,18 @@
-import java.util.Arrays;;
-public class Position {
-    public static void main(String[] args) {
-        int[] arr = {5,7,7,8,8,10};
-        int target = 8;
-        // int[] result = {-1,-1};
-
+class Solution {
+    public int[] searchRange(int[] arr, int target) {
+        int[] result = {-1,-1};
         
-        int startingIndexOfTarget = search(arr,target,true);
-        int endingIndexOfTarget = search(arr,target,false);
-
-        int[] result = {startingIndexOfTarget,endingIndexOfTarget};
-
-        System.out.println(Arrays.toString(result));
+        result[0] =  search(arr,target,true);
         
-    }   
-    static int search(int[] arr , int target , boolean firstIndex){
+        if(result[0]!=-1){
+            // since -1 means element is not present in the array so no need to check for the end Index as well.
+            result[1] = search(arr,target,false);
+        }
+        
+        return result;
+        
+    }
+    public int search(int[] arr , int target , boolean firstIndex){
         int ans = -1;
         
         int start = 0 ;
