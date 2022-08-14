@@ -17,7 +17,8 @@ public class SmallestLetter {
             }
             // here we are checking if the target is greater than or equal to the current element then go to right
             else{
-                start = mid + 1;
+                start = mid + 1; // since we have to get minimum greatest letter.
+                                // so still if we get the letter we have to search in the right for getting the minimum greatest letter
             }
         }
         return letters[start%letters.length];
