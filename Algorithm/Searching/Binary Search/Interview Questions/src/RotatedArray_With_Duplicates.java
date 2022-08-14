@@ -52,6 +52,7 @@ public class RotatedArray_With_Duplicates {
                 end--;
             }
             // left side is sorted so pivot in right side
+            // # if arr[start]<arr[mid] then definitely arr[end]<arr[mid] as arr[end] = arr[start] or arr[end]<arr[start]
             else if( (arr[start]<arr[mid]) || (arr[start]==arr[mid] && arr[mid]>arr[end])){
                 start = mid+1; // ignoreing left side values
             }
