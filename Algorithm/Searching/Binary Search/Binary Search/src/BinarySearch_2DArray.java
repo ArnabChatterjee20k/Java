@@ -17,7 +17,7 @@ public class BinarySearch_2DArray {
 
         static int[] search(int[][] matrix,int target){
             int r = 0;
-            int c = matrix.length-1;
+            int c = matrix.length-1; // since nxn matrix so col length = row length
 
             while(r<matrix.length && c>=0){
                 if(matrix[r][c] == target){
