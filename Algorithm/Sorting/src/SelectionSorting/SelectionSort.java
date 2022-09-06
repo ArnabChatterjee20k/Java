@@ -29,7 +29,7 @@ public class SelectionSort {
     }
 
     static int getMaxIndex(int[] arr,int start,int end){
-        int max = start;
+        int max = start; // take start as max not 0 index because if the array only contains negative numbers then max will be set to 0 and it is a bug
         for (int i = start; i <= end; i++) {
             if(arr[max]<arr[i]){
                 max = i;
