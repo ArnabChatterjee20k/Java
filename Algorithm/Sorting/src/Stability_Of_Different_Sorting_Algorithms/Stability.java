@@ -5,7 +5,6 @@ import java.util.Arrays;
 public class Stability {
     // Stability can be proved by using an array containing duplicates.
     public static void main(String[] args) {
-        System.out.println("In array if duplicates are also maintained in order during then it is stable sorting algorithm");
         int[] arr = {4,3,2,7,8,2,3,1};
 
         bubble(arr);
