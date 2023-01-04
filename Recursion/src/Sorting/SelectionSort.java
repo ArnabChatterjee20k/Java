@@ -25,8 +25,10 @@ public class SelectionSort {
             int temp = arr[max];
             arr[max] = arr[r-1];
             arr[r-1] = temp;
+            
+            // before pushing changes made to the array
 
-            selectionSort(arr, r-1, 0, 0);
+            selectionSort(arr, r-1, 0, 0); 
         }
     }
 
