@@ -2,7 +2,7 @@ package SubsetQuestions;
 
 import java.util.ArrayList;
 
-public class Implementation {
+public class Combination {
     public static void main(String[] args) {
         String str = "abc";
         subsets("", str);
