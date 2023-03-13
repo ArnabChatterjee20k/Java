@@ -93,7 +93,7 @@ public class SudokuSolver {
             }
         }
 
-        int sqrt = (int)(Math.sqrt(board.length));
+        int sqrt = (int)(Math.sqrt(board.length)); // if a board is of length 9 then sqrt 9 = 3 will be the number of square boxes
         int rowStart = row - row % sqrt;
         int colStart = col - col % sqrt;
 
