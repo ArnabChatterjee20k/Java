@@ -1,4 +1,4 @@
-package OOPs3;
+package Inheritence;
 
 public class Inheritence2 {
     public static void main(String[] args) {
