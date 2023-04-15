@@ -19,11 +19,17 @@ public class Car implements Engine,Brake,Media{
         System.out.println("Car brake");
     };
 
+    @Override
+    public void identifier(){
+        System.out.println("I am car");
+    }
+
     public static void main(String[] args) {
         Engine vimo = new Car();
         vimo.start();
         vimo.stop();
         vimo.acc();
+        vimo.identifier();
         
         
     }
