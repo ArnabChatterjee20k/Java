@@ -116,6 +116,22 @@ public class SinglyLinkedList {
         size++;
     }
 
+    // recursive insertion
+    public void insertRecursive(int val,int index){
+        head = insertRec(val, index, head);
+    }
+    // we will be going from index to 0 by decrementing the index
+    private Node insertRec(int val,int index,Node node){
+        if(index == 0){
+            Node temp = new Node(val,node);
+            size++;
+            return temp;
+        }
+
+        node.next = insertRec(val, --index, node.next);
+        return node;
+    }
+    
 
     // deletion
     public int deleteFirst() {
@@ -152,6 +168,5 @@ public class SinglyLinkedList {
         prev.next = prev.next.next;
         return val;
     }
-
 
 }
