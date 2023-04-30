@@ -169,4 +169,75 @@ public class SinglyLinkedList {
         return val;
     }
 
+
+    // merge operation
+    public static SinglyLinkedList merge(SinglyLinkedList first,SinglyLinkedList second){
+        Node f = first.head;
+        Node s = second.head;
+
+        SinglyLinkedList ans = new SinglyLinkedList();
+        while(f != null && s != null){
+            if(f.value < s.value){
+                ans.insertLast(f.value);
+                f = f.next;
+            }
+            else{
+                ans.insertLast(s.value);
+                s = s.next;
+            }
+        }
+        // adding the remaining elements
+        while(f!=null){
+            ans.insertLast(f.value);
+            f = f.next;
+        }
+        while(s!=null){
+            ans.insertLast(s.value);
+            s = s.next;
+        }
+        return ans;
+
+    }
+
+    // sorting
+    public void bubbleSort() {
+        bubbleSort(size-1, 0);
+    }
+    private void bubbleSort(int row,int col){
+        if(row==0) return;
+        if(col<row){
+            Node first = get(col);
+            Node second = get(col+1);
+
+            if(first.value>second.value){
+                // swap
+                if(first == head){
+                    head = second;
+                    first.next = second.next;
+                    second.next = first;
+                }
+
+                else if(second == tail){
+                    Node prev = get(col-1);
+                    prev.next = second;
+                    tail = first;
+                    first.next = null;
+                    second.next = tail;
+                }
+
+                else{
+                    Node prev = get(col-1);
+                    prev.next = second;
+                    first.next = second.next;
+                    second.next = first;
+                }
+            }
+            bubbleSort(row, col+1);
+        }
+        else{
+            bubbleSort(row-1, 0);
+        }
+        
+    }
+
 }
