@@ -13,5 +13,9 @@ public class Main {
         list.display();
         list.bubbleSort();
         list.display();
+        
+        // list.reverse();
+        list.recurseReverse();
+        list.display();
     }
 }

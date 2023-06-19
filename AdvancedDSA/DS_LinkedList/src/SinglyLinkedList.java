@@ -240,4 +240,46 @@ public class SinglyLinkedList {
         
     }
 
+    public void recurseReverse(){
+        recurseReverse(null, head);
+        // System.out.println(tail.next);
+        // System.out.println(head.next);
+    }
+
+    // recursion reverse
+    private void recurseReverse(Node prev,Node cur){
+        if(cur == null) {
+            // we are at the last means
+            // prev at last node and cur at null
+            // prev is now the head
+            // otherwise we will not be able to keep track of the head at last
+            tail = head;//no need to change the tail if you are not having tail
+            head = prev;
+            return;
+
+            // if want to return the node
+            // return the prev as prev is head only
+        };
+        recurseReverse(cur, cur.next);
+        // System.out.println(cur+" "+prev);
+        cur.next = prev;
+    }
+
+    // iterative reversal
+    public void reverse(){
+        if(size<2) return ;
+
+        Node prev = null;
+        Node present = head;
+        Node next = present.next;
+
+        while(present != null){
+            present.next = prev; // reversing
+            prev = present;
+            present = next;
+            if(next!=null) next = next.next;
+        }
+        head = prev; // as the list is reversed
+    }
+
 }
