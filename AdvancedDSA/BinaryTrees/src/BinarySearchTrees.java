@@ -1,3 +1,8 @@
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
+
 public class BinarySearchTrees {
     public class Node {
         private int value;
@@ -103,10 +108,12 @@ public class BinarySearchTrees {
     }
 
     // traversals
+
+    // DFS
     public void preOrder() {
         preOrder(root);
     }
-    
+
     private void preOrder(Node node) {
         if (node == null)
             return;
@@ -114,29 +121,60 @@ public class BinarySearchTrees {
         preOrder(node.left);
         preOrder(node.right);
     }
-    
-    public void inOrder(){
+
+    public void inOrder() {
         inOrder(root);
     }
-    
-    private void inOrder(Node node){
+
+    private void inOrder(Node node) {
         if (node == null)
             return;
         inOrder(node.left);
         System.out.print(node.value + " ");
         inOrder(node.right);
     }
-    
-    public void postOrder(){
+
+    public void postOrder() {
         postOrder(root);
     }
-    
-    private void postOrder(Node node){
+
+    private void postOrder(Node node) {
         if (node == null)
             return;
         postOrder(node.left);
         postOrder(node.right);
         System.out.print(node.value + " ");
     }
-    
+
+    // BFS
+    public void BFS() {
+        // we can also make a single list and append their
+        // But here we are showing level by level
+        Queue<Node> q = new LinkedList<>();
+        List<List<Integer>> res = new ArrayList<>();
+        if(root == null){
+            System.out.println(res);
+            return;
+        }
+        q.offer(root);
+
+        while (!q.isEmpty()) {
+            int levelSize = q.size();
+            List<Integer> level = new ArrayList<>();
+
+            for (int i = 0; i < levelSize; i++) {
+                Node node = q.poll();
+                level.add(node.value);
+
+                if (node.left != null)
+                    q.offer(node.left);
+                if (node.right != null)
+                    q.offer(node.right);
+            }
+
+            res.add(level);
+        }
+
+        System.out.println(res);
+    }
 }

@@ -19,5 +19,7 @@ public class Main {
         tree.inOrder(); // as BST so it will print in Sorted order
         System.out.println();
         tree.postOrder();
+        System.out.println();
+        tree.BFS();
     }
 }
