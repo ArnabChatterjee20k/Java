@@ -43,10 +43,14 @@ public class BinarySearchTrees {
         // for new nodes
         if (node == null)
             return new Node(value);
+        // if the new value is less than the current node value 
+        // go to left of the current node
         if (value < node.value) {
             node.left = insert(value, node.left);
         }
 
+        // if the new value is greater than the current node value 
+        // go to right of the current node
         if (value > node.value) {
             node.right = insert(value, node.right);
         }
