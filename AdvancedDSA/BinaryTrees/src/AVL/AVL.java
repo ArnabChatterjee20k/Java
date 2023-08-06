@@ -110,35 +110,4 @@ public class AVL {
 
         return c;
     }
-
-    // diplay
-    public void display() {
-        display(root, "Root Node");
-    }
-
-    private void display(Node node, String details) {
-        if (node == null)
-            return;
-        System.out.println(details + node.getValue());
-        display(node.left, "Left child of " + node.getValue() + ":");
-        display(node.right, "Right child of " + node.getValue() + ":");
-    }
-
-    // balancing
-    public boolean isBalanced() {
-        return isBalanced(root);
-    }
-
-    private boolean isBalanced(Node node) {
-        if (node == null)
-            return true;
-
-        return Math.abs(height(node.left) - height(node.right)) <= 1 // checking the root
-                &&
-                isBalanced(node.left) // checking the sub left tree
-                &&
-                isBalanced(node.right) // checking the sub right tree
-        ;
-    }
-
 }

@@ -15,7 +15,6 @@ public class Main {
         }
         // if it is self balancing it will give log 1000 that is 3
         System.out.println(tree.height());
-        tree.display();
         
         // tree.populateSorted(new int[]{1,2,3,4,5});
         // tree.display();
