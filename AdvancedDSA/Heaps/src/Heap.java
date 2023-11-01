@@ -6,6 +6,9 @@ class Heap<T extends Comparable<T>> {
     public Heap() {
         list = new ArrayList<>();
     }
+    public void print(){
+        System.out.println(list);
+    }
 
     private void swap(int first, int second) {
         T temp = list.get(first);
@@ -37,7 +40,7 @@ class Heap<T extends Comparable<T>> {
         }
 
         T temp = list.get(0);
-        T last = list.get(list.size() - 1);
+        T last = list.remove(list.size() - 1);
 
         if (!list.isEmpty()) {
             list.set(0, last);
