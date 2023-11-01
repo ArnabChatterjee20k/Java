@@ -71,7 +71,7 @@ class Heap<T extends Comparable<T>> {
         }
 
         if (right < list.size() && list.get(min).compareTo(list.get(right)) > 0) {
-            min = left;
+            min = right;
         }
 
         // now if min is not equals to the current index that means either left or right
@@ -80,5 +80,13 @@ class Heap<T extends Comparable<T>> {
             swap(min, index);
             downHeap(min);
         }
+    }
+
+    public ArrayList<T> heapSort() throws Exception{
+        ArrayList<T> data = new ArrayList<>();
+        while(!list.isEmpty()){
+            data.add(this.remove());
+        }
+        return data;
     }
 }
