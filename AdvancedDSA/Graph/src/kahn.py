@@ -1,12 +1,11 @@
 import collections
 # in dag , 4:[0,1] means 4 is incoming edge to 0 and 1. 0,1 has incoming edge 4
 dag = {
-    0: [],
-    1: [],
-    2: [3],
-    3: [1],
-    4: [0, 1],
-    5: [0, 2]
+    0: [1,2],
+    1: [3,4],
+    3: [4],
+    2: [],
+    4: [1],
 }
 
 # we can make it default dict as well
