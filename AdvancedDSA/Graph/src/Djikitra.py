@@ -26,3 +26,30 @@ class Solution:
         
         
         return shortest_dist
+
+class DjikitraWith_Sets:
+    """
+        In djikitra we use PQ or sets for maintaining and getting min elements quickly
+        But We can't use sets in python or java as it does not store elements in ascending order.
+        Sets is beneficial in cases that we can erase element once its done and we dont have to revisit
+        Not that much of benficial
+        here is a sample code using sets in c++ way
+    """
+    """
+        # insert the starting node in set set({0,S})
+        
+        while set:
+            dis, node = set[0] # need to use method to get 0th element
+            set.remove(set[0]) # erasing
+
+            for nei,wt in adj[node]:
+                if dis + wt < shortest_dist[nei]:
+                    # shortest_dist[nei] != infinity  means 
+                    # its visited already and its minimum
+                    # we can remove the nei from the set
+                    if(shortest_dist[nei] != infinity):
+                        set.remove({shortest_dist[nei],nei})
+                    
+                    shortest_dist[nei] = dis+wt
+                    set.add({shortest_dist[nei],nei})
+    """
