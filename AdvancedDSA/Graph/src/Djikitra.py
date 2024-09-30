@@ -7,6 +7,14 @@ TC = E logV
 from typing import List
 import heapq
 class Solution:
+    """
+        why priority queue or min heap and not a simple queue?
+        pq helps us to get node which is the min first.
+        So basically extra iterations and we are considering length paths due to
+        previous addition due to adding of every paths
+        Simple bfs is basically traversing every path and brute force way
+        PQ is always min first
+    """
     #from the source vertex S.
     def dijkstra(self, V: int, adj: List[List[int]], S: int) -> List[int]:
         shortest_dist = [float("inf")]*V
